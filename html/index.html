@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freaky Fashion</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/index.css">
+</head>
+
+<body>
+<header>
+
+    <div class="header-logo-div">
+        <img src="../images/freaky-fashion-logo.png" alt="missing logo">
+    </div>
+    
+    <div class="header-search-div">
+        <a href=""> 
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </a>
+        <input type="text" placeholder="Sök produkt">
+    </div>
+    
+    <div class="header-icons-div">
+        <a class="favorites-logo" href="">
+            <i class="fa-solid fa-heart"></i>
+        </a>
+
+        <a class="cart-logo" href="">
+            <i class="fa-solid fa-basket-shopping"></i>
+        </a>
+    </div>
+
+    <div class="header-menu-div">
+        <a href="">Nyheter</a>
+        <a href="">Kategori</a>
+        <a href="">Topplistan</a>
+        <a href="">Rea</a>
+        <a href="">Kampanjer</a>
+    </div>
+            
+</header>
+
+<div class="hero-div">
+
+    <div class="hero-text-div">
+        <h1>Summer Deals!</h1>
+        <p>Upp till <span class="hero-text-discount">30% REA </span>på utvalda varor! <br> <span class="hero-text-discount">Fri Leverans</span> Vid Köp Över 500Kr!</p>
+    </div>
+
+    <img src="../images/hero-img.png" alt="Missing hero img">
+</div>
+
+<div class="spots-div">
+
+    <a href="#spot1" class="spot">
+        <div class="spot-content">
+            <img src="../images/spot-shorts.png" alt="Missing spot1.png">
+            <p class="spot-text">SUMMER SHORTS</p>
+        </div>
+    </a>
+
+    <a href="#spot2" class="spot">
+        <div class="spot-content">
+            <img src="../images/spot-skjortor.png" alt="Missing spot2.png">
+            <p class="spot-text">SUMMER SHIRTS</p>
+        </div>
+    </a>
+
+    <a href="#spot3" class="spot">
+        <div class="spot-content">
+            <img src="../images/spot-skor.png" alt="Missing spot3.png">
+            <p class="spot-text">SUMMER SNEAKERS</p>
+        </div>
+    </a>
+
+</div>
+
+<div id="products-grid"></div>
+<script src="../javaScript/index.js"></script>
+
+<!--
+<div class="products-grid">
+    <div class="product">
+        <div class="product-new">
+            Nyhet!
+        </div>
+        <a href="product-details.html">
+            <img src="../images/product.png" alt="">
+        </a>
+        <a href="#abc">
+          <i class="fa-regular fa-heart"></i>  
+        </a>
+        
+        <div class="product-text-div">
+            <h4 class="product-description">Svart T-shirt</h4>
+            <h4 class="product-price">199 SEK</h4>
+            <p class="product-brand">Levis</p>
+        </div>
+    </div>
+    <div class="product">
+        <a href="product-details.html">
+            <img src="../images/product.png" alt="">
+        </a>
+        <a href="#abc">
+          <i class="fa-regular fa-heart"></i>  
+        </a>
+        
+        <div class="product-text-div">
+            <h4 class="product-description">Svart T-shirt</h4>
+            <h4 class="product-price">199 SEK</h4>
+            <p class="product-brand">Levis</p>
+        </div>
+    </div>
+    <div class="product">
+        <a href="product-details.html">
+            <img src="../images/product.png" alt="">
+        </a>
+        <a href="#abc">
+          <i class="fa-regular fa-heart"></i>  
+        </a>
+        
+        <div class="product-text-div">
+            <h4 class="product-description">Svart T-shirt</h4>
+            <h4 class="product-price">199 SEK</h4>
+            <p class="product-brand">Levis</p>
+        </div>
+    </div>
+    <div class="product">
+        <a href="product-details.html">
+            <img src="../images/product.png" alt="">
+        </a>
+        <a href="#abc">
+          <i class="fa-regular fa-heart"></i>  
+        </a>
+        
+        <div class="product-text-div">
+            <h4 class="product-description">Svart T-shirt</h4>
+            <h4 class="product-price">199 SEK</h4>
+            <p class="product-brand">Levis</p>
+        </div>
+    </div>
+    <div class="product">
+        <a href="product-details.html">
+            <img src="../images/product.png" alt="">
+        </a>
+        <a href="#abc">
+          <i class="fa-regular fa-heart"></i>  
+        </a>
+        
+        <div class="product-text-div">
+            <h4 class="product-description">Svart T-shirt</h4>
+            <h4 class="product-price">199 SEK</h4>
+            <p class="product-brand">Levis</p>
+        </div>
+    </div>
+    <div class="product">
+        <a href="product-details.html">
+            <img src="../images/product.png" alt="">
+        </a>
+        <a href="#abc">
+          <i class="fa-regular fa-heart"></i>  
+        </a>
+        
+        <div class="product-text-div">
+            <h4 class="product-description">Svart T-shirt</h4>
+            <h4 class="product-price">199 SEK</h4>
+            <p class="product-brand">Levis</p>
+        </div>
+    </div>
+    <div class="product">
+        <a href="product-details.html">
+            <img src="../images/product.png" alt="">
+        </a>
+        <a href="#abc">
+          <i class="fa-regular fa-heart"></i>  
+        </a>
+        
+        <div class="product-text-div">
+            <h4 class="product-description">Svart T-shirt</h4>
+            <h4 class="product-price">199 SEK</h4>
+            <p class="product-brand">Levis</p>
+        </div>
+    </div>
+    <div class="product">
+        <a href="product-details.html">
+            <img src="../images/product.png" alt="">
+        </a>
+        <a href="#abc">
+          <i class="fa-regular fa-heart"></i>  
+        </a>
+        
+        <div class="product-text-div">
+            <h4 class="product-description">Svart T-shirt</h4>
+            <h4 class="product-price">199 SEK</h4>
+            <p class="product-brand">Levis</p>
+        </div>
+    </div>
+</div>
+-->
+
+<div class="products-footer-div">
+
+    <div class="product-footer-item-div">
+        <i class="fa-solid fa-earth-americas"></i>
+        <p>Gratis frakt och returer</p>
+    </div>
+
+    <div class="product-footer-item-div">
+        <i class="fa-solid fa-plane"></i>
+        <p>Expressfrakt</p>
+    </div>
+
+    <div class="product-footer-item-div">
+        <i class="fa-solid fa-shield"></i>
+        <p>Säkra betalningar</p>
+    </div>
+
+    <div class="product-footer-item-div">
+        <i class="fa-regular fa-face-smile"></i>
+        <p>Nyheter varje dag</p>
+    </div>
+</div>
+
+<footer>
+
+    <div class="normal-footer-menu">
+        <div class="footer-row">
+            <div class="footer-col">
+                <h1>Shopping</h1>
+                <a href="">Vinterjackor</a>
+                <a href="">Pufferjackor</a>
+                <a href="">Kappa</a>
+                <a href="">Trenchcoats</a>
+            </div>
+        
+            <div class="footer-col">
+                <h1>Mina Sidor</h1>
+                <a href="">Mina Ordrar</a>
+                <a href="">Mitt Konto</a>
+            </div>
+        
+            <div class="footer-col">
+                <h1>Kundtjänst</h1>
+                <a href="">Returnpolicy</a>
+                <a href="">Integritetspolicy</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="accordion" id=accordion>
+        <div class="container">
+
+            <div class="card">
+                <div class="card-header" id="headingOne">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            Shopping
+                        </button>
+                    </h5>
+                </div>
+    
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                    <div class="card-body">
+                        <a href="#123">Vinterjackor</a>
+                        <a href="#123">Pufferjackor</a>
+                        <a href="#123">Kappa</a>
+                        <a href="#123">Trenchcoats</a>
+                    </div>
+                </div>
+            </div>
+    
+    
+    
+            <div class="card">
+                <div class="card-header" id="headingTwo">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Mina Sidor
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                    <div class="card-body">
+                        <a href="#123">Mina Ordrar</a>
+                        <a href="#123">Mitt Konto</a>
+                    </div>
+                </div>
+            </div>
+    
+    
+            <div class="card">
+                <div class="card-header" id="headingThree">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            Kundtjänst
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                    <div class="card-body">
+                        <a href="#123">Returnpolicy</a>
+                        <a href="#123">Integritetspolicy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+
+    <div class="copywright-div">
+        <i class="fa-regular fa-copyright"></i>
+        <p>Freaky Fashion</p>
+    </div>
+
+</footer>
+</body>
+</html>

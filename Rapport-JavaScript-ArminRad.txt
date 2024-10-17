@@ -1,0 +1,167 @@
+Godkänd (G)
+
+Grundläggande JavaScript:
+
+*	Vilka är de 8 grundläggande datatyperna i JavaScript? Beskriv de vi har gått igenom i kursen (ej symbol eller bigint). Ge exempel på när man skulle vilja använda var och en av dem.
+	-Number: Representerar numeriska värden, både heltal och flyttal (decimaltal). Kan användas för matematiska beräkningar.
+	-String: Text sträng som är en följd av karaktärer. Används för namn eller inläsning av text från användaren.
+	-Boolean: Kan ha värdet sant eller falskt. Används ofta för att kolla logiska villkor (if-sats eller while etc).
+	-Null: Tilldelar man null så har variabeln inget värde. Används när man vill att en variabel inte ska ha något värde/"vara tom".
+	-Undefined: Variabel som har deklarerats men inte tilldelats något värde. Används ofta för att indikera att en variabel inte har blivit initialiserad 
+	-Object: Datatyp som kan ha flera värden lagrat. Består utav par (key/value) där varje nyckel har ett värde. 
+		 Kan användas som kontainer för att samla flera typer av data I en variabel/container, tex produktinformation.
+	-Symbol
+	-BigInt
+	
+
+
+*	Vad är skillnaden mellan let och const? Ge exempel på när man vill använda respektive.
+	-Let: Variabler deklarerade med let kan ändras/tilldelas nytt värde och är endast tillgänglig i det block/scope som den är skapad/deklarerad I.
+	      Använd när värdet kan ändras tex i en loop där man använder ett index som ska inkrementeras. 
+	-Const: Variabler deklarerade med Const måste tilldelas ett värde direkt och detta värde kan inte ändras senare. Är endast tillgänglig i det block/scope som den är skapad/deklarerad I.
+	        Används för att deklarera konstanter som tex pi, eller något som du inte vill ska kunna ändra värde.
+
+
+*	Vilket värde får en variabel som inte tilldelas ett i samband med deklaration?
+	-Undefined, tex: let x; //Undefined val
+
+
+*	Vad är skillnaden mellan lika med (==) och strikt lika med (===)? Ge exempel när det spelar roll att använda strikt lika med (===).
+	-Lika med: == jämför två värden efter att ha konverterat dem till samma typ (om de har olika datatyper). 
+	 Exempel: 5 == '5' Kommer vara lika/true eftersom att string: '5' kan konverteras till number: 5
+
+	-Strikt lika med: jämför två värden utan att konvertera deras typer. Exempel: 5 == '5' Kommer vara false då det är två olika datatyper.
+
+
+*	Vad är en funktion? Ge exempel på en funktion.
+	-En funktion är ett block av kod, kan vara bra om samma kod behövs på flera ställen, då kan man bara skriva en funktion som innehåller koden och anropa funktionen där det behövs. 
+	 Deklareras med "function" följt av ett namn på funktionen följt av paranteser med inparametrar (param1, param2, ...) 
+	 följt av "måsvingar" {}, innanför dessa skriver man koden. En funktion kan returnera ett värde.
+	 
+	 Exempel: en funktion som adderar två värden och sedan returnerar summan:
+	 function addNumbers(a, b) 
+	 {
+  	   return a + b;
+	 }
+	
+	 funktionen kan nu kallas på med anropet: let result = addNumbers(1, 2); // returnerar 3
+
+
+
+*	Vad är JSON? Ge exempel på användningsområde.
+	-JSON är ett format för att definera data, ofta för att skicka data mellan klient och server eller som konfigurationsfil.
+
+
+
+*	Vilka språkkonstruktioner finns för att styra exekveringsflödet i vår kod?
+ 	-Villkorssatser (if, else, switch) används för att fatta beslut.
+	-Loopar (for, while, do-while etc) används för att repetera kod.
+	-Funktioner skapar återanvändbara kodblock som kan exekveras vid behov.
+
+
+*	Vad är en callback-funktion?
+	-En callback-funktion är en funktion som skickas som ett argument till en annan funktion 
+	 och sedan anropas vid ett senare tillfälle, ofta efter att en asynkron uppgift har slutförts.
+
+
+
+JavaScript för webbläsaren:
+
+*	Vad är DOM? Beskriv hur man kan interagera med den.
+	-Document Object Model är ett sätt att visa och organisera strukturen av en webbsida, som är skriven i HTML eller XML. 
+	 DOM har en så kallad träd struktur där varje del av webbsidan, som bilder, rubriker och text, är grenar på trädet.
+	 Med JavaScript kan man enkelt ändra, lägga till eller ta bort dessa delar av webbsidan/DOMen och på så sätt kan skapa 
+	 interaktiva och dynamiska webbsidor som kan förändras baserat på användarens handlingar.
+
+
+*	Hur kan man hantera händelser? Beskriv hur man kan köra kod i samband med att användaren exempelvis klickar på en knapp?
+	 1. Välj elementet: document.getElementById eller getElementsByClassName.
+	    -ex: const button = document.getElementById("buttonID");
+	 2. Lägg till EventListener: Använd addEventListener för att registrera en funktion som ska köras vid en viss händelse, som ett klick.
+	    ex: button.addEventListener("click", showMessage);
+	 3. Skriv en funktion: Definiera en funktion som utför det önskade resultatet när händelsen inträffar.
+		-function showMessage() 
+		 {
+    		    const label = document.getElementById("messageLabel");
+                    label.textContent = "CLICKED!";
+	         }
+
+
+*	Hur kan man kommunicera med backend programmatiskt? Beskriv hur man kan hämta och skicka data från backend.
+	-Innebär att man kan hämta och skicka data mellan en webbsida och en server via HTTP-förfrågningar. 
+	 Detta kan göras med hjälp av tex Fetch API. Genom att använda GET-requests kan du hämta data, 
+	 medan POST-requests används för att skicka data till servern.
+
+
+
+
+Git:
+*	Vilket kommando använder man för att skapa ett repo?
+	-git init
+
+*	Vilket kommando använder man för att lägga till en fil till staging area?
+	-git add <filnamn> eller git add -A för att lägga till alla förändringar.
+
+*	Vilket kommando använder man för att skapa en commit?
+	-git commit -m "meddelande"
+
+*	Vilket kommando använder man för att lista commits?
+	-git -log
+
+*	Vilket kommando använder man för att ångra (kasta) en commit?
+	-git revert <commit-hash>, skapar ny commit som ångrar ändringen i den angivna commiten.
+	eller:
+	-git reset --hard <commit-hash>, tar bort commiten helt och hållet.
+
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+Väl Godkänd (VG)
+
+Grundläggande JavaScript:
+
+*	Vilka är de 8 grundläggande datatyperna i JavaScript? Beskriv samtliga och ge exempel på när man skulle vilja använda respektive.
+*	Vad är skillnaden mellan let och const? Ge exempel på när man vill använda respektive.
+*	Var är skillnaden mellan let och var?
+*	Vilket värde får en variabel som inte tilldelas ett i samband med deklaration?
+*	Vad är skillnaden mellan undefined och null?
+*	Vad är skillnaden mellan lika med (==) och strikt lika med (===)? Ge exempel när det spelar roll att använda strikt lika med (===).
+*	Vad är en funktion? Beskriv de 3 olika sätt på vilket man kan definiera en funktion.
+*	Vad är en konstruktorfunktion? När vill vi använda en sådan?
+*	Vad innebär "use strict"? Varför vill man använda det?
+*	Vad är JSON? Ge exempel på användningsområdet.
+*	Vad är skillnaden mellan array och map?
+*	Vilka språkkonstruktioner finns för att styra exekveringsflödet i vår kod?
+*	Vad är en callback-funktion?
+*	Vad är en modul? När vill man använda en sådan?
+
+
+
+
+
+JavaScript för webbläsaren:
+
+*	Vad är DOM:en? Ge exempel på hur vi kan interagera med DOM:en.
+*	Hur kan man hantera händelser? Exempelvis, hur kan vi köra kod i samband med att en användare klickar på en knapp?
+*	Hur kan vi kommunicera med backend programmatiskt?
+*	Vilka olika sätt finns att lagra data i webbläsaren?
+*	Vad är en Promise? När vill vi använda en Promise? Hur fungerar en Promise?
+
+
+
+
+
+Git:
+
+*	Vilket kommando använder man för att skapa ett repo?
+*	Vilket kommando använder man för att lägga till en fil till staging area?
+*	Vilket kommando använder man för att skapa en commit?
+*	Vilket kommando använder man för att lista commits?
+*	Vilket kommando använder man för att ångra (kasta) en commit?
+
