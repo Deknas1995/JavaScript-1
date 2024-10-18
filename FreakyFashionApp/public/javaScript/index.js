@@ -29,7 +29,9 @@ function createProductDiv(productData)
 
     // Create an image link
     const productLink = document.createElement('a');
-    productLink.href = `product-details.html?product/${productData.slug}`;
+    //sproductLink.href = `product-details.html`;
+    productLink.href = `/products/${productData.slug}`;
+
 
     const productImage = document.createElement('img');
     productImage.src = productData.imageUrl;

@@ -3,17 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Svart T-Shirt</title>
+    <title>Laddar...</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../CSS/products-details.css">
+    
+    
+    <script>
+        // Hämta slug från URL:en
+        const slug = window.location.pathname.split('/').pop();
+
+        // Hämta produktdata från servern via API-endpoint
+        fetch(`/api/products/${slug}`)
+            .then(response => {
+                if (!response.ok) { // Kolla om svaret är 404 eller något annat fel
+                    throw new Error('Product not found');
+                }
+                return response.json();
+            })
+            .then(product => {
+                // Uppdatera sidans titel med produktens namn
+                document.title = product.name;
+
+                // Uppdatera andra delar av sidan, som produktnamn, pris, etc.
+                document.querySelector('.selected-product-headline').innerText = product.name;
+                document.querySelector('.selected-product-brand').innerText = product.brand;
+                document.querySelector('.selected-product-description').innerText = "Beskrivning av produkten kommer här"; // Ersätt med riktig beskrivning om du har en
+                document.querySelector('.selected-product-price').innerText = product.price;
+                document.querySelector('.product-img img').src = product.imageUrl;
+            })
+            .catch(error => {
+                console.error('Error fetching product data:', error);
+                document.querySelector('.selected-product-headline').innerText = "Product not found";
+            });
+    </script>
 </head>
 
 <body>
 <header>
 
     <div class="header-logo-div">
-        <a href="index.html">
+        <a href="/">
             <img src="../images/freaky-fashion-logo.png" alt="missing logo">  
         </a>
     </div>
