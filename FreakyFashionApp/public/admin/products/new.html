@@ -27,7 +27,7 @@
             <p>Ny produkt</p>
         </div>
 
-        <form>
+        <form id="new-product-form" method="POST" action="/api/products">
             <label for="name">Namn</label>
             <input type="text" id="name" name="name" placeholder="">
 
@@ -67,9 +67,7 @@
     
             <button class="add-button" type="submit">Lägg till</button>
         </form>
-
-
-
+        
     </div>
 
 </div>
@@ -77,6 +75,35 @@
 <footer>
 
 </footer>
+
+<script>
+    document.getElementById('new-product-form').addEventListener('submit', async (event) => {
+        event.preventDefault(); // Prevent the default form submission
+
+        // Create a FormData object from the form
+        const formData = new FormData(event.target);
+
+        try {
+            const response = await fetch('/api/products', {
+                method: 'POST',
+                body: formData
+            });
+
+            if (!response.ok) {
+                throw new Error('Något gick fel med att lägga till produkten');
+            }
+
+            const result = await response.json();
+            console.log('Produkt tillagd:', result);
+            
+            // Redirect to the "Lista produkter" page
+            window.location.href = '/admin/products'; // Change this to the correct URL for your product list
+        } catch (error) {
+            console.error('Error:', error);
+            alert('Kunde inte lägga till produkten: ' + error.message);
+        }
+    });
+</script>
 
 </body>
 </html>
