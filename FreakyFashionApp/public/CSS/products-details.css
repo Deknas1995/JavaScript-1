@@ -310,7 +310,7 @@ header{
 }
 
 
-.similar-products-grid{
+#similar-products-grid{
     width: 100%;
     padding: 5%;
     display: grid;
@@ -322,18 +322,22 @@ header{
     padding-top: 10%;
 }
 
-.similar-products-grid p{
+#similar-products-grid p{
     grid-column: 1 / -1; /* This makes the <p> element span all columns */
     display: flex;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
     font-size: 200%;
     font-weight: 400;
 }
 
+#similar-products-grid > p{
+    justify-content: center;
+}
+
 /*Skärm liten */
 @media (max-width: 639px) {
-    .similar-products-grid{
+    #similar-products-grid{
         display: none;
     }
 }
