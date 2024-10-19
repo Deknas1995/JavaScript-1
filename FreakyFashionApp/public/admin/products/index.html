@@ -25,10 +25,11 @@
 
         <div class="product-table-header">
             <p>Produkter</p>
-            <a href="new.html">Ny produkt</a>
+            <button id="load-products-btn">Ladda produkter</button>
+            <a href="/admin/products/new">Ny produkt</a>
         </div>
 
-        <div class="product-table">
+        <div id="product-table">
             <table>
                 <thead>
                     <tr>
@@ -37,8 +38,10 @@
                         <th>Pris</th>
                     </tr>
                 </thead>
-        
+                
+                <!--Fill dynamically by fetch api-->
                 <tbody>
+                    <!--
                     <tr>
                         <td>Svart T-Shirt</td>
                         <td>AAA111</td>
@@ -52,7 +55,50 @@
                     <tr>
                         <td>...</td>
                     </tr>
+                    -->
                 </tbody>
+
+                <script>
+                    document.addEventListener('DOMContentLoaded', function() 
+                    {
+                        const loadProductsBtn = document.getElementById('load-products-btn');
+                        const productTableBody = document.querySelector('#product-table tbody');
+
+                        loadProductsBtn.addEventListener('click', () => 
+                        {
+                            fetch('/api/getProducts')
+                                .then(response => 
+                                {
+                                    if (!response.ok) 
+                                    {
+                                        throw new Error('Network response was not ok');
+                                    }
+                                    return response.json();
+                                })
+                                .then(products => 
+                                {
+                                    // Rensa tabellen innan vi lägger till nya produkter
+                                    productTableBody.innerHTML = '';
+
+                                    // Gå igenom produkterna och skapa rader
+                                    products.forEach(product => 
+                                    {
+                                        const row = document.createElement('tr');
+                                        row.innerHTML = `
+                                            <td>${product.name}</td>
+                                            <td>${product.sku}</td>
+                                            <td>${product.price} SEK</td>
+                                        `;
+                                        productTableBody.appendChild(row);
+                                    });
+                                })
+                                .catch(error => 
+                                {
+                                    console.error('Det blev ett problem med fetch-operationen:', error);
+                                });
+                        });
+                    });
+                </script>
             </table>
         </div>
         
