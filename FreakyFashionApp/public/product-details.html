@@ -27,7 +27,7 @@
                 // Uppdatera andra delar av sidan, som produktnamn, pris, etc.
                 document.querySelector('.selected-product-headline').innerText = product.name;
                 document.querySelector('.selected-product-brand').innerText = product.brand;
-                document.querySelector('.selected-product-description').innerText = "Beskrivning av produkten kommer här"; 
+                document.querySelector('.selected-product-description').innerText = product.description; 
                 document.querySelector('.selected-product-price').innerText = product.price;
                 document.querySelector('.product-img img').src = product.imageUrl;
             })

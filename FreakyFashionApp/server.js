@@ -15,14 +15,14 @@ const upload = multer({ dest: 'uploads/' }); // Specify the directory for upload
 
 // Sample product data
 const products = [
-    { name: "Svart T-shirt", description: "text", price: "199 SEK", brand: "Levis", sku:"AAA111", imageUrl: "../images/product.png", slug: "svart-tshirt", isNew: true },
-    { name: "Vit T-shirt", description: "text", price: "249 SEK", brand: "Nike", sku:"AAA112", imageUrl: "../images/product.png", slug: "vit-tshirt", isNew: false },
-    { name: "Blå T-shirt", description: "text", price: "179 SEK", brand: "Adidas",sku:"AAA113", imageUrl: "../images/product.png", slug: "bla-tshirt", isNew: false },
-    { name: "Grön T-shirt", description: "text", price: "299 SEK", brand: "Puma",sku:"AAA114", imageUrl: "../images/product.png", slug: "gron-tshirt", isNew: false },
-    { name: "Gul T-shirt", description: "text", price: "159 SEK", brand: "H&M",sku:"AAA115", imageUrl: "../images/product.png", slug: "gul-tshirt", isNew: false },
-    { name: "Röd T-shirt", description: "text", price: "199 SEK", brand: "Zara",sku:"AAA116", imageUrl: "../images/product.png", slug: "rod-tshirt", isNew: false },
-    { name: "Lila T-shirt", description: "text", price: "279 SEK", brand: "Gucci",sku:"AAA117", imageUrl: "../images/product.png", slug: "lila-tshirt", isNew: false },
-    { name: "Orange T-shirt", description: "text", price: "229 SEK", brand: "Reebok",sku:"AAA118", imageUrl: "../images/product.png", slug: "orange-tshirt", isNew: false }
+    { name: "Svart T-shirt", description: "Elegant svart t-shirt.", price: "199 SEK", brand: "Levis", sku:"AAA111", imageUrl: "../images/product.png", slug: "svart-tshirt", isNew: true },
+    { name: "Vit T-shirt", description: "Elegant Vit t-shirt.", price: "249 SEK", brand: "Nike", sku:"AAA112", imageUrl: "../images/product.png", slug: "vit-tshirt", isNew: false },
+    { name: "Blå T-shirt", description: "Elegant Blå t-shirt.", price: "179 SEK", brand: "Adidas",sku:"AAA113", imageUrl: "../images/product.png", slug: "bla-tshirt", isNew: false },
+    { name: "Grön T-shirt", description: "Elegant Grön t-shirt.", price: "299 SEK", brand: "Puma",sku:"AAA114", imageUrl: "../images/product.png", slug: "gron-tshirt", isNew: false },
+    { name: "Gul T-shirt", description: "Elegant Gul t-shirt.", price: "159 SEK", brand: "H&M",sku:"AAA115", imageUrl: "../images/product.png", slug: "gul-tshirt", isNew: false },
+    { name: "Röd T-shirt", description: "Elegant Röd t-shirt.", price: "199 SEK", brand: "Zara",sku:"AAA116", imageUrl: "../images/product.png", slug: "rod-tshirt", isNew: false },
+    { name: "Lila T-shirt", description: "Elegant Lila t-shirt.", price: "279 SEK", brand: "Gucci",sku:"AAA117", imageUrl: "../images/product.png", slug: "lila-tshirt", isNew: false },
+    { name: "Orange T-shirt", description: "Elegant Orange t-shirt.", price: "229 SEK", brand: "Reebok",sku:"AAA118", imageUrl: "../images/product.png", slug: "orange-tshirt", isNew: false }
 ];
 
 
