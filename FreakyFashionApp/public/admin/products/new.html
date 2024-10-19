@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administration</title>
+    <link rel="stylesheet" href="../../CSS/new.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+
+<body>
+
+<header>
+    <h1 class="banner">Administration</h1>
+</header>
+
+<div class="admin-grid">
+    
+    <div class="sidebar">
+        <p>Produkter</p>
+    </div>
+    
+    <div class="column2">
+
+        <div class="column2-header">
+            <p>Ny produkt</p>
+        </div>
+
+        <form>
+            <label for="name">Namn</label>
+            <input type="text" id="name" name="name" placeholder="">
+
+            <label for="beskrivning">Beskrivning</label>
+            <textarea id="beskrivning" name="beskrivning" placeholder=""></textarea> 
+
+            <label for="bild">Bild</label>
+            <input type="file" id="bild" name="bild">
+
+            <label for="sku">SKU</label>
+            <input type="text" id="sku" name="sku" placeholder="">
+
+            <label for="pris">Pris</label>
+            <input type="number" id="pris" name="pris" placeholder="">
+
+
+
+            <label class="checkbox" for="option1">
+                <input class="checkbox" type="checkbox" id="option1" name="options" value="option1">
+                T-Shirts
+            </label>
+    
+            <label class="checkbox" for="option2">
+                <input class="checkbox" type="checkbox" id="option2" name="options" value="option2">
+                Sommar
+            </label>
+    
+            <label class="checkbox" for="option3">
+                <input class="checkbox" type="checkbox" id="option3" name="options" value="option3">
+                Byxor
+            </label>
+    
+            <label class="checkbox" for="option4">
+                <input class="checkbox" type="checkbox" id="option4" name="options" value="option4">
+                Skor
+            </label>
+    
+            <button class="add-button" type="submit">Lägg till</button>
+        </form>
+
+
+
+    </div>
+
+</div>
+
+<footer>
+
+</footer>
+
+</body>
+</html>
+    

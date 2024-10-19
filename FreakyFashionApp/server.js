@@ -6,6 +6,11 @@ const app = express();
 // Serve static files (CSS, JS, images, etc.) from the 'public' folder
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Serve static files from the 'admin' folder
+app.use('/admin', express.static(path.join(__dirname, 'admin')));
+
+
+
 // Sample product data
 const products = [
     { name: "Svart T-shirt", price: "199 SEK", brand: "Levis", imageUrl: "../images/product.png", slug: "svart-tshirt", isNew: true },
@@ -23,6 +28,17 @@ const products = [
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
+
+// GET requests ADMIN
+app.get('/admin/products', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'admin', 'products', 'index.html'));
+});
+
+// GET requests ADMIN new
+app.get('/admin/products/new', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'admin', 'products', 'new.html'));
+});
+
 
 // GET requests to product details page (just serve HTML)
 app.get('/products/:slug', (req, res) => {
