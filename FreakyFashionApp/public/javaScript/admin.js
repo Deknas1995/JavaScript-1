@@ -1,10 +1,17 @@
+// This attaches an event listener to the document that listens for the DOMContentLoaded event
+// This event is triggered when the initial HTML document has been completely loaded
 document.addEventListener('DOMContentLoaded', function() 
 {
+    // Get the load products button
     const loadProductsBtn = document.getElementById('load-products-btn');
+    // Get the <tbody> element to populate with products
     const productTableBody = document.querySelector('#product-table tbody');
 
+    // Add click event listener to the load products button
+    // When event is triggered, trigger the following arrow function
     loadProductsBtn.addEventListener('click', () => 
     {
+        // Request to the /api/getProducts endpoint to return a list of products in JSON format
         fetch('/api/getProducts')
             .then(response => 
             {
@@ -16,10 +23,10 @@ document.addEventListener('DOMContentLoaded', function()
             })
             .then(products => 
             {
-                // Rensa tabellen innan vi lägger till nya produkter
+                // Clear table before adding new products
                 productTableBody.innerHTML = '';
 
-                // Gå igenom produkterna och skapa rader
+                // For each product create table data with data from products
                 products.forEach(product => 
                 {
                     const row = document.createElement('tr');
@@ -31,7 +38,8 @@ document.addEventListener('DOMContentLoaded', function()
                     productTableBody.appendChild(row);
                 });
             })
-            .catch(error => {
+            .catch(error => 
+            {
                 console.error('Det blev ett problem med fetch-operationen:', error);
             });
     });

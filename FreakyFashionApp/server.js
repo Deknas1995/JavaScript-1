@@ -6,6 +6,7 @@ const app = express();
 
 // Serve static files (CSS, JS, images, etc.) from the 'public' folder
 app.use(express.static(path.join(__dirname, 'public')));
+
 // Middleware to parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -13,7 +14,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 const upload = multer({ dest: 'uploads/' }); // Specify the directory for uploaded files
 
 
-// Sample product data
 const products = [
     { name: "Svart T-shirt", description: "Elegant svart t-shirt.", price: "199 SEK", brand: "Levis", sku:"AAA111", imageUrl: "../images/product.png", slug: "svart-tshirt", isNew: true },
     { name: "Vit T-shirt", description: "Elegant Vit t-shirt.", price: "249 SEK", brand: "Nike", sku:"AAA112", imageUrl: "../images/product.png", slug: "vit-tshirt", isNew: false },
